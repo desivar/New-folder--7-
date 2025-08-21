@@ -1,0 +1,120 @@
+.account-page {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  padding: 4rem 2rem;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.account-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background: white;
+  padding: 3rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.account-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  color: #4b8f29;
+  margin-bottom: 1rem;
+}
+
+.account-welcome {
+  font-size: 1.25rem;
+  color: #333;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.account-info {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+.account-name {
+  color: #a52a2a;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .account-container {
+    padding: 2rem;
+  }
+
+  .account-title {
+    font-size: 2rem;
+  }
+
+  .account-welcome {
+    font-size: 1.1rem;
+  }
+}
+
+.account-section {
+  margin-top: 2.5rem;
+  text-align: left;
+  border-top: 1px solid #ddd;
+  padding-top: 1.5rem;
+}
+
+.account-section h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.75rem;
+  color: #4b8f29;
+  margin-bottom: 1rem;
+}
+
+.account-section p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+button {
+  background-color: #4b8f29;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 1rem;
+}
+
+button:hover {
+  background-color: #3a6b20;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  color: #333;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-top: 0.3rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+form button[type="submit"] {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .account-section h2 {
+    font-size: 1.5rem;
+  }
+}
