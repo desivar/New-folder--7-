@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   getProductById,
   getProductReviews,
@@ -230,34 +231,69 @@ export default function ProductPage() {
 
   const ratingBreakdown = calculateRatingBreakdown();
 
+    function onClick(index: number): void {
+        setSelectedImage(index);
+    }
+
   return (
     <div className='product-page'>
       <div className='product-container'>
-        <div className='product-images'>
           <div className='main-image'>
-            <img
+            <Image
               src={product.images[selectedImage]}
               alt={product.name}
+              width={500}
+              height={500}
               onError={(e) => {
                 (e.target as HTMLImageElement).src =
                   '/placeholder-image/placeholder-image.jpg';
               }}
+              style={{ objectFit: 'cover' }}
             />
           </div>
           <div className='image-thumbnails'>
-            {product.images.map((image, index) => (
-              <img
-                key={index}
-                src={image}
-                alt={`${product.name} ${index + 1}`}
-                className={selectedImage === index ? 'active' : ''}
-                onClick={() => setSelectedImage(index)}
-                onError={(e) => {
-                  (e.target as HTMLImageElement).src =
-                    '/placeholder-image/placeholder-image.jpg';
-                }}
-              />
+            interface ProductImageThumbnailProps {
+                Image: string;
+                index: number;
+                productName: string;
+                isActive: boolean;
+                onClick: (index: number) => void;
+            }
+
+            const ProductImageThumbnail: React.FC<ProductImageThumbnailProps> = ({
+                image,
+                index,
+                productName,
+                isActive,
+                onClick,
+            }) => (
+                <Image
+                    key={index}
+                    src={image}
+                    alt={`${productName} ${index + 1}`}
+                    width={100}
+                    height={100}
+                    className={isActive ? 'active' : ''}
+                    onClick={() => onClick(index)}
+                    onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+                        (e.target as HTMLImageElement).src =
+                            '/placeholder-image/placeholder-image.jpg';
+                    }}
+                    style={{ cursor: 'pointer', objectFit: 'cover' }}
+                />
+            );
+
+            {product.images.map((image: string, index: number) => (
+                <ProductImageThumbnail
+                    key={index}
+                    image={image}
+                    index={index}
+                    productName={product.name}
+                    isActive={selectedImage === index}
+                    onClick={setSelectedImage}
+                />
             ))}
+          </div>
           </div>
         </div>
 
