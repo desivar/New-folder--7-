@@ -73,8 +73,8 @@ export default function AboutPage() {
               </div>
               <div className="story-image">
                 <img 
-                  src="https://images.unsplash.com/photo-1584515933487-779824d29309?q=80&w=500" 
-                  alt="Medical supplies and healthcare equipment organized on a modern table" 
+                  src="https://images." 
+                  alt="Medical supp" 
                 />
               </div>
             </div>
