@@ -1,0 +1,402 @@
+/* Color Palette: A clean and professional medical palette from Coolors */
+:root {
+  --primary-blue: #0A3C59;
+  --secondary-blue: #1C5485;
+  --tertiary-blue: #D8EEF3;
+  --accent-green: #2ECC71;
+  --text-dark: #333333;
+  --text-light: #555555;
+  --background-white: #F9F9F9;
+  --border-light: #E0E0E0;
+}
+
+/* General Page Layout */
+.homepage {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-white);
+  color: var(--text-dark);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--primary-blue);
+  margin-bottom: 0.5rem;
+}
+
+.section-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  /* Animation for a subtle zoom effect */
+  animation: video-zoom 20s infinite alternate;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    rgba(10, 60, 89, 0.7), 
+    rgba(28, 84, 133, 0.7)
+  );
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  color: var(--background-white);
+  text-align: center;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-cta {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.cta-button {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 2px solid var(--background-white);
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+
+.cta-button.primary {
+  background-color: var(--accent-green);
+  color: var(--background-white);
+  border-color: var(--accent-green);
+}
+
+.cta-button.primary:hover {
+  background-color: var(--background-white);
+  color: var(--accent-green);
+}
+
+.cta-button.secondary {
+  background-color: transparent;
+  color: var(--background-white);
+}
+
+.cta-button.secondary:hover {
+  background-color: var(--secondary-blue);
+  border-color: var(--secondary-blue);
+}
+
+/* Search Section */
+.search-section {
+  padding: 2rem 0;
+  background-color: var(--tertiary-blue);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.search-container {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.search-bar {
+  flex-grow: 1;
+  position: relative;
+  display: flex;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  font-size: 1rem;
+}
+
+.search-input::placeholder {
+  color: #999;
+}
+
+.search-button {
+  padding: 0.75rem 1rem;
+  border: none;
+  background-color: var(--primary-blue);
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-button:hover {
+  background-color: var(--secondary-blue);
+}
+
+.filter-container select {
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--background-white);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Featured Products Section & Benefits Section */
+.featured-section,
+.benefits-section,
+.categories-section {
+  padding: 3rem 0;
+}
+
+.products-grid,
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.product-card,
+.benefit-card {
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 2rem;
+  background-color: var(--background-white);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.product-card:hover,
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+/* Categories Section */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.category-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover {
+  transform: scale(1.03);
+}
+
+.category-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+}
+
+.category-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 60, 89, 0.7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--background-white);
+  padding: 1rem;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.category-card:hover .category-overlay {
+  opacity: 1;
+}
+
+.category-overlay h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.category-overlay p {
+  font-size: 1rem;
+}
+
+.sticker {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 2.5rem;
+  z-index: 5;
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover .sticker {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Newsletter Section */
+.newsletter-section {
+  background-color: var(--primary-blue);
+  color: var(--background-white);
+  text-align: center;
+  padding: 3rem 20px;
+  margin-top: 3rem;
+}
+
+.newsletter-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.newsletter-content p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.newsletter-form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.newsletter-form input {
+  flex-grow: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.newsletter-form button {
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--accent-green);
+  color: var(--background-white);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.newsletter-form button:hover {
+  background-color: #248c56;
+}
+
+/* Keyframe Animations */
+@keyframes video-zoom {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .search-container {
+    flex-direction: column;
+  }
+
+  .filter-container select {
+    width: 100%;
+  }
+}
