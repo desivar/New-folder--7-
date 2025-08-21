@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Product } from '@/types/definitions';
 import './ProductCard.css';
 
@@ -15,13 +16,15 @@ export default function ProductCard({ product }: ProductCardProps) {
       : '/placeholder-image/placeholder-image.jpg';
 
   return (
-    <div className="product-card">
-      <div className="product-image-container">
-        <img
+    <div className="product-card-container">
+      <div className="product-card">
+        <Image
           src={firstImage}
           alt={product.name}
           className="product-image"
-          onError={e => {
+          width={300}
+          height={300}
+          onError={(e) => {
             (e.target as HTMLImageElement).src =
               '/placeholder-image/placeholder-image.jpg';
           }}

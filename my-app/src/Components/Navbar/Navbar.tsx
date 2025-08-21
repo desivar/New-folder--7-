@@ -168,11 +168,11 @@ export default function Navbar() {
             className={`mobile-nav-item ${pathname === '/' ? 'active' : ''}`}
           >
             <div className="mobile-nav-icon">
-              <img
+              <Image
                 src="/icons/home_icon.svg"
                 alt="Home"
-                width="24"
-                height="24"
+                width={24}
+                height={24}
               />
             </div>
             <span className="mobile-nav-label">Home</span>
@@ -183,11 +183,11 @@ export default function Navbar() {
             className={`mobile-nav-item ${pathname === '/products' ? 'active' : ''}`}
           >
             <div className="mobile-nav-icon">
-              <img
+              <Image
                 src="/icons/product_icon.svg"
                 alt="Products"
-                width="24"
-                height="24"
+                width={24}
+                height={24}
               />
             </div>
             <span className="mobile-nav-label">Products</span>
@@ -198,11 +198,11 @@ export default function Navbar() {
             className={`mobile-nav-item ${pathname === '/sellers' ? 'active' : ''}`}
           >
             <div className="mobile-nav-icon">
-              <img
+              <Image
                 src="/icons/artisans_icon.svg"
                 alt="Artisans"
-                width="24"
-                height="24"
+                width={24}
+                height={24}
               />
             </div>
             <span className="mobile-nav-label">Artisans</span>
@@ -272,14 +272,12 @@ export default function Navbar() {
               href="/login"
               className={`mobile-nav-item ${pathname === '/login' ? 'active' : ''}`}
             >
-                <Image
-                  src="/icons/login_icon.svg"
-                  alt="Login"
-                  width={24}
-                  height={24}
-                />
-                />
-              </div>
+              <Image
+                src="/icons/login_icon.svg"
+                alt="Login"
+                width={24}
+                height={24}
+              />
               <span className="mobile-nav-label">Login</span>
             </Link>
           )}
